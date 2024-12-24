@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+</head>
+<body>
+    <h1>Welcome to The SportsDB Project</h1>
+
+    <form action="{% url 'create_records' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Create Records</button>
+    </form>
+</body>
