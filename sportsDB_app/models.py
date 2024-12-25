@@ -11,7 +11,7 @@ class Country(models.Model):
 
 
 class League(models.Model):
-    id_leagueAPI = models.CharField(max_length=50,blank=True, null=True) # Charfield а не Integer потому что я неуверен какой в API тип + более универсально
+    id_leagueAPI = models.CharField(max_length=50, unique=True) # Charfield а не Integer потому что я неуверен какой в API тип + более универсально
     title = models.CharField(max_length=100)
     title_alternate = models.CharField(max_length=100)
     sport_name = models.CharField(max_length=50)
@@ -26,7 +26,7 @@ class League(models.Model):
 class Team(models.Model):
     title = models.CharField(max_length=100)
     # Основная информация о команде
-    id_teamAPI = models.CharField(max_length=100, blank=True, null=True)  # ID команды из API
+    id_teamAPI = models.CharField(max_length=100, unique=True)  # ID команды из API
     id_espn = models.CharField(max_length=100, blank=True, null=True)  # ID ESPN
     id_api_football = models.CharField(max_length=100, blank=True, null=True)  # ID API футбола
     loved = models.IntegerField(blank=True, null=True)  # Оценка "любимости"
@@ -74,6 +74,7 @@ class Team(models.Model):
 
     # Цвета команды
     colour1 = models.CharField(max_length=7, blank=True, null=True)  # Основной цвет
+
 
     # Логотипы и изображения
     badge = models.URLField(blank=True, null=True)  # Логотип
