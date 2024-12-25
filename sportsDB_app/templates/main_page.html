@@ -7,8 +7,8 @@
 <body>
     <h1>Welcome to The SportsDB Project</h1>
 
-    <form action="{% url 'create_records' %}" method="post">
+    <form action="{% url 'admin:index' %}" method="post">
         {% csrf_token %}
-        <button type="submit">Create Records</button>
+        <button type="submit">Go to Admin Panel</button>
     </form>
 </body>

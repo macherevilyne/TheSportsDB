@@ -18,6 +18,6 @@ class LeagueAdmin(admin.ModelAdmin):
 
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):
-    list_display = ('title', 'league')  # Имя команды и лига
+    list_display = ('title',)  # Имя команды и лига
     list_filter = ('league',)  # Фильтр по лиге
     search_fields = ('title',)  # Поиск по имени (в виде списка)
